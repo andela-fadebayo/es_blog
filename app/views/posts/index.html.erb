@@ -1,0 +1,18 @@
+<%= link_to 'Create a New Post', new_post_path %>
+<br /><br />
+
+<%# Testing commenting in .erb template %>
+
+<% @posts.each do |post| %>
+<h2><%= link_to post.title, post %></h2>
+<span>Posted by <%= post.author %> on <i><%= friendly_date post.created_at %></i></span>
+<p><%= post.body %></p>
+<p>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure you?' } %>
+</p>
+<br />
+<% end %>
+
+<br />
+

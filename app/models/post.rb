@@ -8,8 +8,8 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   def self.search(query)
-    __elasticsearch__.search(
-        { "query": { "multi_match": { "query": query, "fields": ["title", "body"] }}}
-    )
+    # __elasticsearch__.search(
+    #     { "query": { "multi_match": { "query": query, "fields": ["title", "body"] }}}
+    # )
   end
 end

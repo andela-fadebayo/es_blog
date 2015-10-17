@@ -46,3 +46,6 @@ gem "haml"
 # Elasticsearch
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+
+# Use Puma web server for Heroku deployment
+gem 'puma'

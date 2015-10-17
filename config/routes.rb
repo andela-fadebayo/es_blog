@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :comments, :only => [:create, :destroy]
   end
 
+  get 'search', to: 'search#search'
+
   # get 'login' => 'user_sessions#new'
   # post 'login' => 'user_session#create'
   # post 'logout' => 'user_sessions#destroy'

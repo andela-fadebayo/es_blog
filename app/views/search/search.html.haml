@@ -1,0 +1,17 @@
+%h2 Another era in Elasticsearch
+= link_to 'Go back', posts_path
+.search-form
+  = form_for search_path, method: :get do |s|
+    %p
+      = s.label 'Search For'
+      = text_field_tag :q, params[:q]
+      = submit_tag 'Go', name: nil
+  %h4 Search Results
+  - if @posts.empty? and !params[:q].nil?
+    %p No results found for <strong>"#{params[:q]}"</strong>.
+  - else
+    %ul
+      - @posts.each do |result|
+        %ul= result.title
+        = link_to 'View Post', controller: 'posts', action: 'show', id: result._id
+        %br

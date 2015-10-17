@@ -1,0 +1,21 @@
+= form_for(@post) do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+    - if @post.errors[:title]
+      = @post.errors.full_messages[0]
+
+  .field
+    = f.label :author
+    = f.text_field :author
+    - if @post.errors[:title]
+      = @post.errors.full_messages[1]
+
+  .field
+    = f.label :body
+    = f.text_area :body
+    - if @post.errors[:title]
+      = @post.errors.full_messages[2]
+
+  .actions
+    = f.submit

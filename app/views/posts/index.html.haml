@@ -6,7 +6,7 @@
 - @posts.each do |post|
   %h2= link_to post.title, post
   %span
-    Posted by #{post.author} on 
+    Posted by #{post.author} on
     %i= friendly_date post.created_at
   %p= post.body
   %p

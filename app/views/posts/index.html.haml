@@ -1,16 +1,19 @@
-= link_to 'Create a New Post', new_post_path
-= link_to 'Search', search_path
-%br/
-%br/
-%div
-- @posts.each do |post|
-  %h2= link_to post.title, post
-  %span
-    Posted by #{post.author} on
-    %i= friendly_date post.created_at
-  %p= post.body
-  %p
-    = link_to 'Edit', edit_post_path(post)
-    = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+%div{"ng-controller" => "blogCtrl"}
+  = link_to 'Create a New Post', new_post_path
+  = link_to 'Search', search_path
   %br/
-%br/
+  %p Message from Angular controller
+  %p{"ng-bind" => "test"}
+  %br/
+  %div
+  - @posts.each do |post|
+    %h2= link_to post.title, post
+    %span
+      Posted by #{post.author} on
+      %i= friendly_date post.created_at
+    %p= post.body
+    %p
+      = link_to 'Edit', edit_post_path(post)
+      = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+    %br/
+  %br/

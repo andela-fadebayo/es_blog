@@ -55,3 +55,5 @@ gem 'puma'
 # Setup to use angularjs
 gem 'angular-rails-templates'
 gem 'bower-rails'
+
+gem 'sprockets'
